@@ -1,0 +1,11 @@
+[Unit]
+Description=Dell OS Live desktop boot probe
+After=lightdm.service
+ConditionKernelCommandLine=dell.smoketest
+ConditionVirtualization=vm
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/dell-ready
+TimeoutStartSec=400
+[Install]
+WantedBy=graphical.target

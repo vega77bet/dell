@@ -1,0 +1,22 @@
+#!/bin/sh
+export XDG_CURRENT_DESKTOP=DellOS
+export XDG_SESSION_DESKTOP=dell
+export QT_MEDIA_BACKEND=ffmpeg
+export QT_QUICK_BACKEND=software
+export LIBGL_ALWAYS_SOFTWARE=1
+export QT_LOGGING_RULES='qt.multimedia.ffmpeg.warning=false'
+xset s 600 600
+xdg-user-dirs-update
+openbox --config-file /etc/xdg/openbox/dell-rc.xml &
+lxpolkit &
+dunst &
+nm-applet &
+udiskie --tray &
+xfce4-power-manager &
+trayer --edge bottom --align right --widthtype pixel --width 110 --height 48 --margin 230 --transparent false --tint 0x151d2b &
+dell-shell &
+shell_pid=$!
+if ! grep -qs '^welcomed=true$' "$HOME/.config/DellOS/desktop.conf"; then
+    dell-app welcome &
+fi
+wait "$shell_pid"

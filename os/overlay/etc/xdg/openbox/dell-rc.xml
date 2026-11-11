@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_config xmlns="http://openbox.org/3.4/rc">
+ <focus><focusNew>yes</focusNew><followMouse>no</followMouse><raiseOnFocus>yes</raiseOnFocus></focus>
+ <placement><policy>Smart</policy><center>yes</center></placement>
+ <theme><name>DellOS</name><titleLayout>NLIMC</titleLayout><keepBorder>yes</keepBorder><font place="ActiveWindow"><name>Noto Sans</name><size>10</size><weight>Bold</weight></font></theme>
+ <desktops><number>1</number></desktops>
+ <resize><drawContents>no</drawContents></resize>
+ <keyboard>
+  <keybind key="A-Tab"><action name="NextWindow"/></keybind>
+  <keybind key="A-F4"><action name="Close"/></keybind>
+  <keybind key="W-e"><action name="Execute"><command>dell-app files</command></action></keybind>
+  <keybind key="W-Return"><action name="Execute"><command>dell-app terminal</command></action></keybind>
+  <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
+  <keybind key="W-l"><action name="Execute"><command>dm-tool lock</command></action></keybind>
+  <keybind key="Print"><action name="Execute"><command>dell-app capture</command></action></keybind>
+  <keybind key="XF86AudioRaiseVolume"><action name="Execute"><command>wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+</command></action></keybind>
+  <keybind key="XF86AudioLowerVolume"><action name="Execute"><command>wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-</command></action></keybind>
+  <keybind key="XF86AudioMute"><action name="Execute"><command>wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</command></action></keybind>
+ </keyboard>
+ <mouse><dragThreshold>8</dragThreshold><doubleClickTime>300</doubleClickTime>
+  <context name="Titlebar"><mousebind button="Left" action="Press"><action name="Focus"/><action name="Raise"/></mousebind><mousebind button="Left" action="Drag"><action name="Move"/></mousebind><mousebind button="Left" action="DoubleClick"><action name="ToggleMaximize"/></mousebind></context>
+  <context name="Client"><mousebind button="Left" action="Press"><action name="Focus"/><action name="Raise"/></mousebind><mousebind button="A-Left" action="Drag"><action name="Move"/></mousebind><mousebind button="A-Right" action="Drag"><action name="Resize"/></mousebind></context>
+  <context name="Handle"><mousebind button="Left" action="Drag"><action name="Resize"/></mousebind></context>
+  <context name="BLCorner"><mousebind button="Left" action="Drag"><action name="Resize"/></mousebind></context>
+  <context name="BRCorner"><mousebind button="Left" action="Drag"><action name="Resize"/></mousebind></context>
+  <context name="Close"><mousebind button="Left" action="Click"><action name="Close"/></mousebind></context>
+  <context name="Maximize"><mousebind button="Left" action="Click"><action name="ToggleMaximize"/></mousebind></context>
+  <context name="Iconify"><mousebind button="Left" action="Click"><action name="Iconify"/></mousebind></context>
+ </mouse>
+</openbox_config>

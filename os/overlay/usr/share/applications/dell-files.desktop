@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Dell Arquivos
+Exec=dell-app files %f
+Icon=system-file-manager
+Type=Application
+Categories=System;FileManager;
+MimeType=inode/directory;

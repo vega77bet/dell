@@ -1,0 +1,13 @@
+#!/bin/sh
+# The VM smoke test only succeeds after X11 and the actual desktop are running.
+set -eu
+n=0
+while [ "$n" -lt 180 ]; do
+ if pgrep -x dell-shell >/dev/null && DISPLAY=:0 XAUTHORITY=/home/live/.Xauthority wmctrl -l 2>/dev/null | grep -q 'Dell OS Panel'; then
+  printf 'DELL_OS_DESKTOP_READY\n' > /dev/ttyS0 2>/dev/null || true
+  exit 0
+ fi
+ n=$((n + 1))
+ sleep 2
+done
+exit 1

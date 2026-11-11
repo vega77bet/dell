@@ -1,0 +1,17 @@
+[Default Applications]
+inode/directory=dell-files.desktop
+text/plain=dell-text.desktop
+text/markdown=dell-text.desktop
+application/json=dell-text.desktop
+image/png=dell-paint.desktop
+image/jpeg=dell-paint.desktop
+image/bmp=dell-paint.desktop
+video/mp4=dell-media.desktop
+video/x-matroska=dell-media.desktop
+video/webm=dell-media.desktop
+audio/mpeg=dell-media.desktop
+audio/ogg=dell-media.desktop
+audio/flac=dell-media.desktop
+audio/x-wav=dell-media.desktop
+x-scheme-handler/http=firefox-esr.desktop
+x-scheme-handler/https=firefox-esr.desktop

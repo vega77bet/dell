@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Dell Texto
+Exec=dell-app text %f
+Icon=accessories-text-editor
+Type=Application
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/markdown;application/json;

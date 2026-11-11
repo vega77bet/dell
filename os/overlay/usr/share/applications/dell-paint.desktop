@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Dell Paint
+Exec=dell-app paint %f
+Icon=applications-graphics
+Type=Application
+Categories=Graphics;
+MimeType=image/png;image/jpeg;image/bmp;

@@ -1,0 +1,2 @@
+# Removed by the installer. Applies only to the disposable Live user.
+live ALL=(ALL:ALL) NOPASSWD: ALL

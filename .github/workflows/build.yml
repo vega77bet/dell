@@ -1,0 +1,32 @@
+name: Build Dell OS
+on:
+  workflow_dispatch:
+  push:
+    paths: ['apps/**', 'desktop/**', 'os/**', 'build/**', 'tests/**', 'CMakeLists.txt']
+jobs:
+  iso:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile native apps and run Qt tests
+        run: bash build/sdk.sh
+      - name: Exercise the real desktop and terminal
+        run: docker run --rm --user "$(id -u):$(id -g)" -v "$PWD:/src" dell-os-sdk bash tests/gui-smoke.sh
+      - name: Build hybrid ISO
+        run: bash build/iso.sh
+      - name: Boot BIOS and UEFI with 3 GB
+        run: bash build/smoke.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dell-os-v0.1-amd64
+          path: |
+            out/*.iso
+            out/*.sha256
+            out/*.json
+            out/*.log
+            out/*.png
+            out/*.ppm
+            out/iso-structure.txt
+          retention-days: 7

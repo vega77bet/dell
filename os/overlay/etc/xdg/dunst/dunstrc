@@ -1,0 +1,15 @@
+[global]
+ origin = top-right
+ offset = 24x24
+ width = 340
+ font = Noto Sans 10
+ frame_color = "#e6b85c"
+ frame_width = 1
+ corner_radius = 8
+ timeout = 8
+[urgency_normal]
+ background = "#151d2b"
+ foreground = "#edf2fa"
+[urgency_critical]
+ background = "#583232"
+ foreground = "#ffffff"

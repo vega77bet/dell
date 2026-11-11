@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+printf 'Dell OS · Atualizações\nFeche os aplicativos antes de atualizar.\n'
+sudo apt-get update
+apt list --upgradable
+read -r -p 'Instalar atualizações agora? [s/N] ' answer
+if [[ "$answer" == s || "$answer" == S ]]; then
+    sudo apt-get upgrade
+fi
+read -r -p 'Pressione Enter para fechar. '

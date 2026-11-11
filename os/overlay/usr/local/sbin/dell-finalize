@@ -1,0 +1,16 @@
+#!/bin/bash
+# Runs inside the installed target, never against the running Live system.
+set -euo pipefail
+if mountpoint -q /run/live/medium; then
+    echo 'Refusing to finalize the running Live system' >&2
+    exit 1
+fi
+if id live >/dev/null 2>&1; then userdel -r live; fi
+rm -f /etc/sudoers.d/dell-live /etc/lightdm/lightdm.conf.d/50-dell.conf
+mkdir -p /etc/lightdm/lightdm.conf.d
+printf '[Seat:*]\nuser-session=dell\n' > /etc/lightdm/lightdm.conf.d/50-dell-installed.conf
+printf 'GRUB_DEFAULT=0\nGRUB_TIMEOUT=5\nGRUB_DISTRIBUTOR="Dell OS"\nGRUB_CMDLINE_LINUX_DEFAULT="quiet"\nGRUB_CMDLINE_LINUX=""\n' > /etc/default/grub
+systemctl disable dell-ready.service
+# Container build policy must not disable service startup on the installed OS.
+rm -f /usr/sbin/policy-rc.d
+chmod 0440 /etc/sudoers.d/*

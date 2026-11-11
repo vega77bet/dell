@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+printf '1. Fuso horário\n2. Idiomas\n3. Layout de teclado\n'
+read -r -p 'Escolha: ' choice
+case "$choice" in
+1) sudo dpkg-reconfigure tzdata ;;
+2) sudo dpkg-reconfigure locales ;;
+3) sudo dpkg-reconfigure keyboard-configuration; sudo setupcon ;;
+*) exit 0 ;;
+esac

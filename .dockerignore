@@ -1,0 +1,5 @@
+out/*
+!out/stage/
+!out/stage/**
+.git
+**/__pycache__

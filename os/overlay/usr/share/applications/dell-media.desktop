@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Dell Mídia
+Exec=dell-app media %f
+Icon=multimedia-video-player
+Type=Application
+Categories=AudioVideo;
+MimeType=video/mp4;video/x-matroska;video/webm;audio/mpeg;audio/ogg;audio/flac;audio/x-wav;

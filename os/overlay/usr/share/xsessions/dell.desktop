@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Dell OS
+Comment=Desktop leve do Dell OS
+Exec=dell-session
+Type=Application
+DesktopNames=DellOS

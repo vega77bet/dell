@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+if [ ! -r /run/live/medium/live/filesystem.squashfs ]; then
+    zenity --error --text='O instalador deve ser iniciado na sessão Live do pendrive.'
+    exit 1
+fi
+# Keep this wrapper alive: pkexec rejects an orphan produced by a detached GUI launch.
+pkexec /usr/bin/calamares

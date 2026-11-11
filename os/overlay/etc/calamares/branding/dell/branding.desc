@@ -1,0 +1,31 @@
+---
+componentName: dell
+welcomeStyleCalamares: false
+windowExpanding: normal
+windowSize: 900px,600px
+windowPlacement: center
+strings:
+ productName: Dell OS
+ shortProductName: Dell OS
+ version: "0.1"
+ shortVersion: "0.1"
+ versionedName: Dell OS 0.1 Aurora
+ shortVersionedName: Dell OS 0.1
+ bootloaderEntryName: Dell OS
+ productUrl: ""
+ supportUrl: ""
+ knownIssuesUrl: ""
+ releaseNotesUrl: ""
+images:
+ productIcon: logo.svg
+ productLogo: logo.svg
+ productWelcome: logo.svg
+style:
+ SidebarBackground: "#151d2b"
+ SidebarText: "#edf2fa"
+ SidebarTextCurrent: "#151d2b"
+ SidebarBackgroundCurrent: "#e6b85c"
+slideshow: show.qml
+slideshowAPI: 2
+uploadServer:
+ type: none
